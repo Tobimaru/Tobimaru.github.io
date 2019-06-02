@@ -1,0 +1,9 @@
+---
+layout: post_ext
+title:  "Breaking symmetry in variational inference initialisation"
+mathjax: true
+---
+
+## Introduction
+
+A common task in Bayesian inference is to compute the marginal or posterior distribution of a random variable that represents a model parameter by applying Bayes' theorem. Although simple in concept, mathematical tractability becomes cumbersome when the number of variables involved, i.e. the complexity of the model, increases. This means that in practice, approximative methods are required to estimate a solution that is sufficiently close to the exact marginal distribution according to a certain measure of distance. Two types of methods are commonly applied: Monte Carlo sampling and variational inference. Monte-Carlo methods are referred to as "stochastic", because they attempt to find an approximation of the marginal distribution through sequential sampling schemes. In contrast, variational inference methods are referred to as "deterministic" because they are based on a functional approximation, but they also require an iterative algorithm to obtain a solution. Although good expositions can be found for the theoretical foundation of variational inference (e.g. ["Pattern recognition and machine learning"](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/) by Christopher Bishop), the practical requirements for a good initialisation of the algorithm are usually not explained exhaustively. The aim of this post is to explain in more depth one of the initialisation problems that can arise based on a Gaussian mixture model.     
